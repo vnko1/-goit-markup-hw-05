@@ -151,6 +151,59 @@ ul {
   line-height: calc(24 / 14);
 }
 
+.hero-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  transform: scale(1);
+  opacity: 1;
+  transition: opacity var(--main-animation-value),
+    transform var(--main-animation-value),
+    visibility var(--main-animation-value);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.is-hidden {
+  visibility: hidden;
+  transform: scale(0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hero-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 528px;
+  height: 521px;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform var(--main-animation-value) 250ms;
+  background-color: var(--main-bgc);
+}
+
+.hero-backdrop.is-hidden .hero-modal {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.hero-modal-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+}
+
 /* HEADER */
 
 .header {
@@ -251,52 +304,6 @@ ul {
 .hero-btn:hover,
 .hero-btn:focus {
   background-color: var(--hover-hero-btn-color);
-}
-
-.hero-backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 2;
-  transform: scale(1);
-  opacity: 1;
-  transition: opacity var(--main-animation-value),
-    transform var(--main-animation-value);
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
-.is-hidden {
-  visibility: hidden;
-  transform: scale(0);
-  opacity: 0;
-  pointer-events: none;
-}
-
-.hero-modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 528px;
-  height: 521px;
-  background-color: var(--main-bgc);
-}
-
-.hero-modal-btn {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  background-color: transparent;
-  cursor: pointer;
 }
 
 /* BENEFITS */
