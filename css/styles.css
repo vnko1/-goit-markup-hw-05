@@ -157,8 +157,7 @@ ul {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 2;
-  transform: scale(1);
+  transform: scaleX(1);
   opacity: 1;
   transition: opacity var(--main-animation-value),
     transform var(--main-animation-value),
@@ -168,7 +167,7 @@ ul {
 
 .is-hidden {
   visibility: hidden;
-  transform: scale(0);
+  transform: scaleX(0);
   opacity: 0;
   pointer-events: none;
 }
@@ -179,13 +178,13 @@ ul {
   left: 50%;
   width: 528px;
   height: 521px;
-  transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%);
   transition: transform var(--main-animation-value) 250ms;
   background-color: var(--main-bgc);
 }
 
 .hero-backdrop.is-hidden .hero-modal {
-  transform: translate(-50%, -50%) scale(0);
+  transform: translate(-50%, 100%);
 }
 
 .hero-modal-btn {
@@ -201,7 +200,6 @@ ul {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   background-color: transparent;
-  cursor: pointer;
 }
 
 /* HEADER */
@@ -495,9 +493,9 @@ ul {
 }
 
 .portfolio-filter-btn {
+  padding: 6px 22px;
   transition: background-color var(--main-animation-value),
     color var(--main-animation-value), box-shadow var(--main-animation-value);
-  padding: 6px 22px;
   font-weight: 500;
   line-height: calc(26 / 16);
   letter-spacing: inherit;
