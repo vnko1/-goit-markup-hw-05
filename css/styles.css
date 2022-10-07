@@ -248,7 +248,8 @@ ul {
   transition: transform var(--main-animation-value);
 }
 
-.header-nav-link:hover::after {
+.header-nav-link:hover::after,
+.header-nav-link:focus::after {
   transform: scaleX(1);
 }
 
